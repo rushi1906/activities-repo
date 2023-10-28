@@ -1,13 +1,13 @@
-package com.npci;
+package com.loan;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LoanApplication {
+public class LoanApplicationProjectApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(LoanApplication.class, args);
+		SpringApplication.run(LoanApplicationProjectApplication.class, args);
 	}
 
 }

@@ -1,10 +1,10 @@
-package com.npci;
+package com.loan;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class LoanApplicationTests {
+class LoanApplicationProjectApplicationTests {
 
 	@Test
 	void contextLoads() {

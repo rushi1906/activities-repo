@@ -1,31 +1,43 @@
-package com.npci.beans;
-
+package com.loan.beans;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
 @Entity
-public class LoanApp {
-	
+@Table(name = "loan_application")
+public class LoanApplication {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "application_id")
-    private int applicationId; 
-    
-    @ManyToOne
+    private int applicationId;
+
+   
     @JoinColumn(name = "customer_id")
-    private Customer customerId;
+    private int customerId;
 
-    @ManyToOne
+  
     @JoinColumn(name = "loan_id")
-    private Loan loanId;
+    private int loanId;
 
-    @Column(nullable = false)
+    @Column(name = "status")
     private String status;
+
+	public LoanApplication() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public LoanApplication(int applicationId, int customerId, int loanId, String status) {
+		super();
+		this.applicationId = applicationId;
+		this.customerId = customerId;
+		this.loanId = loanId;
+		this.status = status;
+	}
 
 	public int getApplicationId() {
 		return applicationId;
@@ -35,19 +47,19 @@ public class LoanApp {
 		this.applicationId = applicationId;
 	}
 
-	public Customer getCustomerId() {
+	public int getCustomerId() {
 		return customerId;
 	}
 
-	public void setCustomerId(Customer customerId) {
+	public void setCustomerId(int customerId) {
 		this.customerId = customerId;
 	}
 
-	public Loan getLoanId() {
+	public int getLoanId() {
 		return loanId;
 	}
 
-	public void setLoanId(Loan loanId) {
+	public void setLoanId(int loanId) {
 		this.loanId = loanId;
 	}
 
@@ -61,21 +73,10 @@ public class LoanApp {
 
 	@Override
 	public String toString() {
-		return "LoanApp [applicationId=" + applicationId + ", customerId=" + customerId + ", loanId=" + loanId
+		return "LoanApplication [applicationId=" + applicationId + ", customerId=" + customerId + ", loanId=" + loanId
 				+ ", status=" + status + "]";
 	}
 
-	public LoanApp(int applicationId, Customer customerId, Loan loanId, String status) {
-		super();
-		this.applicationId = applicationId;
-		this.customerId = customerId;
-		this.loanId = loanId;
-		this.status = status;
-	}
-
-	public LoanApp() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	}
+    // Constructors, getters, and setters
+    
+}
